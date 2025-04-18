@@ -90,10 +90,13 @@ reusable functions that solve specific tasks. This activity encourages:
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
 
+
+// Task 1
+
 const readline = require('readline-sync');
 
-let attendeeName = readline.question("Please enter your name. ");
-let attendeeRole = readline.question("What is your role? ");
+let attendeeName = readline.question("Please enter your name: ");
+let attendeeRole = readline.question("Please enter your role: ");
 
 function printBadge(name, role) {
     // console.log("Name: " + attendeeName + ", Role: " + attendeeRole);
@@ -103,7 +106,32 @@ function printBadge(name, role) {
 console.log(printBadge(attendeeName, attendeeRole)); 
 
 
-let attendeeCost = 35;
-let attendeeCount = readline.question("Please enter the number of attendees. ");
+// Task 2
 
-function totalCost(cost, count);
+let attendeeCost = 10;
+let attendeeCount = 200;
+
+function totalCost(cost, count) {
+
+    if (attendeeCount > 100) {
+        cost = attendeeCost * 0.9;
+    } else {
+        cost = attendeeCost;
+    }
+
+    let totalAttendeeCost = cost * count;
+    return totalAttendeeCost;
+}
+
+console.log(totalCost(attendeeCost, attendeeCount));
+
+
+// Task 3
+
+let attendeeEmail = readline.question("Please enter your email: ");
+
+function validateEmail(email) {
+    return email.includes("@") && email.includes(".");
+}
+
+console.log(validateEmail(attendeeEmail));
