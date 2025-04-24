@@ -32,26 +32,26 @@ This activity reinforces:
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
-// Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
+// // Script 1 - Greeting multiple users
+// console.log("Welcome, Alice!");
+// console.log("Welcome, Bob!");
+// console.log("Welcome, Charlie!");
 
-// Script 2 - Sum calculation
-let num1 = 5, num2 = 10;
-let sum = num1 + num2;
-console.log("The sum of 5 and 10 is " + sum);
+// // Script 2 - Sum calculation
+// let num1 = 5, num2 = 10;
+// let sum = num1 + num2;
+// console.log("The sum of 5 and 10 is " + sum);
 
-// Script 3 - Product calculation
-let product = num1 * num2;
-console.log("The product of 5 and 10 is " + product);
+// // Script 3 - Product calculation
+// let product = num1 * num2;
+// console.log("The product of 5 and 10 is " + product);
 
-// Script 4 - Print names from a list
-let names = ["Alice", "Bob", "Charlie"];
-console.log("Names in the list:");
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
-}
+// // Script 4 - Print names from a list
+// let names = ["Alice", "Bob", "Charlie"];
+// console.log("Names in the list:");
+// for (let i = 0; i < names.length; i++) {
+//     console.log(names[i]);
+// }
 
 /*
 ===========================================
@@ -78,28 +78,35 @@ function greet(name) {
    return "Welcome, " + name + "!";
 }
 
-console.log(greet("Alice"));
-console.log(greet("Bob"));
-console.log(greet("Charlie"));
+console.log(greet("Alice"));    // My code is different from the solution code in that
+console.log(greet("Bob"));      // I did a console.log here at the end to invoke the function
+console.log(greet("Charlie"));  // and print the results, rather than just calling the function.
+
+// The solution code for Script 1 tells me that I don't necessarily need a console.log to get the values, however I do if I want to see them.
+
 
 // Script 2
 function sumCalc(int1, int2) {
-   return "The sum of " + int1 + " and " + int2 + " is " + (int1 + int2);
+   return "The sum of " + int1 + " and " + int2 + " is " + (int1 + int2); // My code is different because I didn't just return the value of the sum, I returned the value of the sum inside a string.
 }
 
 console.log(sumCalc(5, 10));
 
+// The solution code for Script 2 shows me that I should read the directions more closely and output the value if that's what the instructions are asking for.
+
+
 // Script 3
 function prodCalc(int1, int2) {
-   return "The product of " + int1 + " and " + int2 + " is " + (int1 * int2);
+   return "The product of " + int1 + " and " + int2 + " is " + (int1 * int2); // This code has the same difference as Script 2.
 }
 
 console.log(prodCalc(5, 10));
 
+// The solution code for Script 3 shows me the same thing it showed me for Script 2.
+
+
 // Script 4
 let namesList = ["Alice", "Bob", "Charlie"];
-
-returnNames(names);
 
 function returnNames(names) {
    console.log("Names in the list:");
@@ -107,3 +114,10 @@ function returnNames(names) {
       console.log(names[i]);
    }
 }
+
+returnNames(namesList);
+
+// For Script 4, my code did not even work. I realized that the only reason it worked before was because of the original code above.
+// Once I commented all that code out, my new code did not work. I had tried invoking the function with the parameter instead of the argument
+// and also had it placed before the function itself. I moved the call to the end and referenced the argument inside of the function call 
+// and now it works as it should. Otherwise, my code is very similar to the solution code.
